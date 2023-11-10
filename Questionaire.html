@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Car Choice</title>
+    <style>
+        body {
+            text-align: center;
+            font-family: Arial, sans-serif;
+        }
+    </style>
+</head>
+<body>
+    <h1>Choose Your Dream Car</h1>
+    <p>Do you want a Ferrari or a Mercedes?</p>
+
+    <button onclick="chooseCar('Ferrari')">Ferrari</button>
+    <button onclick="chooseCar('Mercedes')">Mercedes</button>
+
+    <p id="result"></p>
+
+    <script>
+        function chooseCar(car) {
+            if (car === 'Ferrari') {
+                document.getElementById('result').innerHTML = 'Good choice! A Ferrari is pure speed and style!';
+            } else {
+                const messages = [
+                    'Oops, wrong choice! Did you hear Mercedes is thinking of adding cupholders to their F1 cars?',
+                    'Mercedes, really? I guess speed isn\'t everything; they also have a nice coffee maker on board.',
+                    'Wrong turn! Mercedes is still figuring out how to make an F1 car as iconic as their logo.',
+                    'Oh no, you picked Mercedes! Their F1 strategy is like their car color—silver, but not always a winner.'
+                ];
+
+                const randomIndex = Math.floor(Math.random() * messages.length);
+                document.getElementById('result').innerHTML = messages[randomIndex];
+            }
+        }
+    </script>
+</body>
+</html>
+
